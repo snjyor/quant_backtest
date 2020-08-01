@@ -1,7 +1,5 @@
-
 # =====转换为其他分钟数据
-def transfer_data(df,rule_type = '15T'):
-
+def transfer_data(df, rule_type='15T'):
     period_df = df.resample(rule=rule_type, on='candle_begin_time', label='left', closed='left').agg(
         {'open': 'first',
          'high': 'max',
